@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Editing from "./Editing";
 
 function Listing() {
   const [todos, setTodos] = useState([]);
@@ -40,7 +41,9 @@ function Listing() {
           {todos.map((todo) => (
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
-              <td>{/* <EditTodo todo={todo} /> */}</td>
+              <td>
+                <Editing todo={todo} />
+              </td>
               <td>
                 <button
                   className="btn btn-danger"
